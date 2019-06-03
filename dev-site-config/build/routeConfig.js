@@ -3,51 +3,11 @@
  import Component3 from 'terra-doc-template';
  import ContentWrapper from 'terra-dev-site/lib/app/components/ContentWrapper';
  import TerraDevSitePlaceholder from 'terra-dev-site/lib/app/common/Placeholder';
- import Component6 from '../../src/terra-dev-site/tests/Card.test';
- import Component7 from '../../src/terra-dev-site/tests/FunRetro.test';
- import RoutingMenu from 'terra-application-layout/lib/menu/RoutingMenu';
+ import Component6 from '../../lib/terra-dev-site/test/FunRetro.test';
  import { Redirect } from 'react-router-dom';
 
  export default {
-   'menu': {
-      '/tests/retro-board/tests': {
-         'path': '/tests/retro-board/tests',
-         'component': {
-            'default': {
-               'componentClass': RoutingMenu,
-               'props': {
-                  'title': 'Tests',
-                  'menuItems': [
-                     {
-                        'text': 'Card',
-                        'path': '/tests/retro-board/tests/card'
-                     },
-                     {
-                        'text': 'Fun Retro',
-                        'path': '/tests/retro-board/tests/fun-retro'
-                     }
-                  ]
-               }
-            }
-         }
-      },
-      '/tests': {
-         'path': '/tests',
-         'component': {
-            'default': {
-               'componentClass': RoutingMenu,
-               'props': {
-                  'title': 'Tests',
-                  'menuItems': [{
-                        'text': 'Tests',
-                        'path': '/tests/retro-board/tests',
-                        'hasSubMenu': true
-                     }]
-               }
-            }
-         }
-      }
-   },
+   'menu': {},
    'content': {
       '/home': {
          'path': '/home',
@@ -73,8 +33,8 @@
             }
          }
       },
-      '/tests/retro-board/tests/card': {
-         'path': '/tests/retro-board/tests/card',
+      '/tests/retro-board/fun-retro': {
+         'path': '/tests/retro-board/fun-retro',
          'component': {
             'default': {
                'componentClass': ContentWrapper,
@@ -85,45 +45,14 @@
             }
          }
       },
-      '/tests/retro-board/tests/fun-retro': {
-         'path': '/tests/retro-board/tests/fun-retro',
-         'component': {
-            'default': {
-               'componentClass': ContentWrapper,
-               'props': {
-                  'content': Component7,
-                  'props': void 0
-               }
-            }
-         }
-      },
-      '/tests/retro-board/tests': {
-         'path': '/tests/retro-board/tests',
-         'component': {
-            'default': {
-               'componentClass': ContentWrapper,
-               'props': {
-                  'content': Redirect,
-                  'props': { 'to': '/tests/retro-board/tests/card' }
-               }
-            },
-            'tiny': {
-               'componentClass': ContentWrapper,
-               'props': {
-                  'content': TerraDevSitePlaceholder,
-                  'props': { 'src': placeholderSrc }
-               }
-            }
-         }
-      },
       '/tests': {
          'path': '/tests',
          'component': {
             'default': {
                'componentClass': ContentWrapper,
                'props': {
-                  'content': TerraDevSitePlaceholder,
-                  'props': { 'src': placeholderSrc }
+                  'content': Redirect,
+                  'props': { 'to': '/tests/retro-board/fun-retro' }
                }
             }
          }

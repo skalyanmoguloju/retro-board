@@ -37,7 +37,8 @@
     "compile": "npm run compile:build",
     "compile:clean": "rimraf lib && rimraf aggregated-translations",
     "compile:build": "npm run compile:babel",
-    "compile:babel": "babel src --out-dir lib --copy-files"
+    "compile:babel": "babel src --out-dir lib --copy-files",
+    "pack": "webpack --config node_modules/terra-dev-site/config/webpack/webpack.config.js -p"
   },
   "eslintConfig": {
     "extends": "react-app"
