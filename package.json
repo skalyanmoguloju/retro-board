@@ -9,10 +9,13 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-icons": "^3.7.0",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
     "semantic-ui-react": "^0.87.1",
     "terra-action-footer": "^2.10.0",
     "terra-action-header": "^2.14.0",
     "terra-arrange": "^3.9.0",
+    "terra-base": "^5.9.0",
     "terra-button": "^3.12.0",
     "terra-card": "^3.7.0",
     "terra-clinical-header": "^3.4.0",
@@ -30,14 +33,17 @@
     "terra-spacer": "^3.10.0",
     "terra-table": "^3.14.0",
     "terra-text": "^4.5.0",
+    "username": "^5.1.0",
     "uuid": "^3.3.2"
   },
   "scripts": {
-    "start": "tt-serve --port 8000",
-    "compile": "npm run compile:build",
+    "start": "tt-serve",
+    "compile": "npm run compile:build && npm run compile:dist",
     "compile:clean": "rimraf lib && rimraf aggregated-translations",
+    "compile:dist": "cross-env NODE_ENV=production babel-node tools/compileDist",
     "compile:build": "npm run compile:babel",
     "compile:babel": "babel src --out-dir lib --copy-files",
+    "deploy-gh-pages": "npm run pack && gh-pages -d build",
     "pack": "webpack --config node_modules/terra-dev-site/config/webpack/webpack.config.js -p"
   },
   "eslintConfig": {
@@ -55,7 +61,13 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "chalk": "^2.4.2",
+    "cross-env": "^5.2.0",
+    "gh-pages": "^2.0.1",
+    "html-webpack-plugin": "^3.2.0",
     "terra-dev-site": "^4.0.0",
-    "terra-toolkit": "^4.28.1"
+    "terra-toolkit": "^4.28.1",
+    "webpack": "^4.35.2",
+    "webpack-merge": "^4.2.1"
   }
 }

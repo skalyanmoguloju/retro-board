@@ -1,8 +1,8 @@
 import React from 'react';
-import FunRetroContainer from '../../main/components/FunRetroContainer';
+import Main from '../../main/components/Main';
 
 const FunRetro = () => (
-  <FunRetroContainer />
+  <Main />
 );
 
 export default FunRetro;

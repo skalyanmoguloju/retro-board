@@ -3,7 +3,7 @@
  import Component3 from 'terra-doc-template';
  import ContentWrapper from 'terra-dev-site/lib/app/components/ContentWrapper';
  import TerraDevSitePlaceholder from 'terra-dev-site/lib/app/common/Placeholder';
- import Component6 from '../../lib/terra-dev-site/test/FunRetro.test';
+ import Component6 from '../../src/terra-dev-site/test/FunRetro.test';
  import { Redirect } from 'react-router-dom';
 
  export default {
